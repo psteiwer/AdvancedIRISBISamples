@@ -18,7 +18,8 @@ Method %OnGetAnalysisResultSet(Output pRS As %SQL.StatementResult, pSQL As %Stri
 {
         // This "UniqueText part is needed to make a unique MDX string for this PlugIn so it does not share other ResultSet objects/cache
         Set tMDX=..%GetPluginMDX()_", 1 as UniqueText"
-        Set tRS=##class(%DeepSee.ResultSet).%New()
+		set tMDX=$replace(tMDX,"DRILLFACTS","DRILLTHROUGH")
+		Set tRS=##class(%DeepSee.ResultSet).%New()
         Do tRS.%PrepareMDX(tMDX)
         Do tRS.%Execute()
         Do tRS.%GetListingResultSet(.pRS)
