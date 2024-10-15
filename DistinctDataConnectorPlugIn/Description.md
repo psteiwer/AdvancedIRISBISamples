@@ -7,7 +7,7 @@ This example builds on top of the "ConnectorCube" example from Samples-BI
 Import DistinctDCPlugIn.cls to your namespace that has Samples-BI installed on it. %KPI MDX function can now be used, as shown in the example below
 
 # Usage
-%KPI("Custom DC Distinct","DISTINCT",1,"%level","<level spec>","%CONTEXT")
+%KPI("Custom DC Distinct","DISTINCT",1,"%level","\<level spec\>","%CONTEXT")
 
 # What this example solves
 If you try and use the built in Distinct PlugIn with a Data Connector, you get the following:
